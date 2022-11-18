@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://www.my.buildings.nycnet/Buildings/wp-content/uploads/Pngs/Intranet_Alt3-150x150.png"
+      type="image/png"
+      sizes="16x16"
+    />
+    <title>FISP History Lookup</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css"
+    />
+    <link href="css/fisphistory.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="navbar-text">
+      <a href="https://www.nyc.gov" target="_blank" title="DOB Intranet"> <img src="images/transparent-nyc_white@x2.png" height="15" alt="NYC Logo"></img></a>
+    </div>
+    <div class="navbar justify-content-center">
+      <div class="h2">Façade Inspection History
+      </div>
+    </div>
+<div class="container" >
+      <div class="row first">
+          <div class="col-lg-5">
+              <div class="row">
+                  <div class="col-md-1">
+                    <img src="images\fispsearch.svg" id="doSearch" alt="searchicon">
+                  </div>
+                  <div class="col-md-3">
+                    <input id="searchTerm" type="search" minlength="7" maxlength="55" size="40" placeholder="Street Address or 7-digit Bin"/>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6 xrad">
+            <label><input type="radio" name="borough" value="bronx" checked> Bronx</label>
+            <label><input type="radio" name="borough" value="brooklyn"> Brooklyn</label>
+            <label><input type="radio" name="borough" value="manhattan"> Manhattan</label>
+            <label><input type="radio" name="borough" value="queens"> Queens</label>
+            <label><input type="radio" name="borough" value="staten island"> Staten Island</label>
+          </div>
+      </div>
+      <div class="row resultDiv">
+        <div class="col-lg-5" id="propertyData">
+            Search Results...<span id="notFoundMsg2"></span>
+        </div>
+        <div class="col-lg-7 propertyDataDetail" id="propertyDataDetail"></div>
+    </div>
+</div>
+<nav class="navbar fixed-bottom container-fluid">
+  <div class="container-fluid foot" >
+    <a  href="https://www.my.buildings.nycnet/Buildings/" target="_blank"><img src="images\transparent-nyc_white@x2.png"  alt="NYC Logo" height="10" />
+        <span>build safe | live safe</span>
+    </a>
+    <a class="devsquad" href="https://www1.nyc.gov/site/buildings/dob/analytics-reports.page" target="_blank">Built by Dev Squad</a>
+  </div>
+</nav>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="fisphistory.js"></script>
+</body>
+</html>
