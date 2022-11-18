@@ -1,0 +1,72 @@
+css html,
+body {
+  background-color: gainsboro;
+  background-image: url("../images/bw-skyline-nwzh1h7fpah0uz3de5925oc5tl5l86nb45gw6nasxs.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: hidden;
+  height: 100vh;
+}
+.navbar-text {
+  background: #4294cd;
+  color: white !important;
+  text-align: center;
+  border: 1px solid gainsboro;
+}
+.navbar {
+  background: #002878;
+  height: 70px;
+  color: white !important;
+  border: 1px solid gainsboro;
+}
+.container {
+  height: 75% !important;
+  background-color: rgb(247, 247, 248);
+  margin-top: 10px;
+  border: 1px solid gainsboro;
+}
+.first {
+  border-bottom: 1px solid rgb(201, 202, 203);
+  height: 15%;
+  align-items: center;
+}
+.resultDiv {
+  height: 83%;
+  overflow-y: auto !important;
+  padding-top: 7px;
+  margin-bottom: 10px auto 15px;
+}
+.propertyDataDetail {
+  overflow-y: auto;
+}
+.boldit {
+  font-weight: 700;
+}
+#doSearch {
+  cursor: pointer;
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 6px;
+  padding: 3px;
+  margin: 5px auto;
+}
+.detailDiv {
+  margin: 10px auto;
+  font-size: 1.3em;
+}
+.xrad > * {
+  margin-right: 15px;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #fff;
+}
+.fixed-bottom {
+  background-color: #000;
+  border: none;
+}
+.foot {
+  margin: auto 10%;
+}
