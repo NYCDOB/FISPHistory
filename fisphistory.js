@@ -10,7 +10,7 @@
   let vProp = new DocumentFragment();
   let vPropCycles = new DocumentFragment();
   const data = await d3.csv(
-    "https://raw.githubusercontent.com/NYCDOB/data_store/master/facadeLL11_012323.csv",
+    "https://raw.githubusercontent.com/NYCDOB/data_store/master/facadeLL11_020223.csv",
     (d) => {
       d.Address = `${d["House Number"]} ${d["Street Name"]}`;
       return d;
@@ -45,16 +45,15 @@
       let vVals = [
         "Cycle",
         "Control Number",
-        "CN Filing Status",
-        "CN Filing Date",
+        "Initial Filing Status",
+        "Current Filing Status",
+        "Effective Filing Date",
         "SWARMP Completion Date",
         "QEWI Name",
         "QEWI Business Name",
         "Unsafe Completion Date",
         "Owner Name",
         "Owner Type",
-        "Intial Filing Status",
-        "Current Filing Status",
       ];
       vVals.forEach((colName, ndx) => {
         window["_Div" + ndx] = document.createElement("div");
