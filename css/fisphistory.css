@@ -70,3 +70,13 @@ a:active {
 .foot {
   margin: auto 10%;
 }
+.zzz.row .boldit:first-child {
+  width: 10%;
+}
+.col-3:not(.boldit):first-child {
+  width: 40%;
+}
+.col-3:not(.boldit):nth-child(2) {
+  width: 60%;
+}
+
