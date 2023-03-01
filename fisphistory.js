@@ -1,3 +1,4 @@
+;
 ("use strict");
 (async function (e) {
   "use strict";
@@ -10,7 +11,7 @@
   let vProp = new DocumentFragment();
   let vPropCycles = new DocumentFragment();
   const data = await d3.csv(
-    "https://raw.githubusercontent.com/NYCDOB/data_store/master/facadeLL11_020223.csv",
+    "https://raw.githubusercontent.com/NYCDOB/data_store/master/facadeLL11_022823.csv",
     (d) => {
       d.Address = `${d["House Number"]} ${d["Street Name"]}`;
       return d;
@@ -22,6 +23,20 @@
       vDivEl.innerText = theval;
       vDivEl.className = theclass;
       thediv.appendChild(vDivEl);
+    }
+    function getvVals(xR,vVals=[]) {
+      let orgarray = ["Cycle","Control Number","Initial Filing Status","Current Filing Status","Effective Filing Date","SWARMP Completion Date","QEWI Name","QEWI Business Name","Unsafe Completion Date","Owner Name","Owner Type"];
+      orgarray.forEach((x) => {
+        if (x == "Unsafe Completion Date") {
+          if (xR["Current Filing Status"].toLowerCase() == "unsafe") {
+            vVals.push(x);
+          }
+        } else if (x == "SWARMP Completion Date") {
+          if (xR["Current Filing Status"].toLowerCase().indexOf("swarmp") >= 0||xR["Current Filing Status"].toLowerCase() == "unsafe") {
+            vVals.push(x)}
+        } else {vVals.push(x)}
+      });
+      return vVals;
     }
     let _A = document.createElement("p");
     _A.innerText = e[0]["Address"];
@@ -41,23 +56,11 @@
     _hr.className = "col-lg-1 d-lg-inline";
     vProp.appendChild(_hr);
     let ctr = 0;
-    for (let record of e) {
-      let vVals = [
-        "Cycle",
-        "Control Number",
-        "Initial Filing Status",
-        "Current Filing Status",
-        "Effective Filing Date",
-        "SWARMP Completion Date",
-        "QEWI Name",
-        "QEWI Business Name",
-        "Unsafe Completion Date",
-        "Owner Name",
-        "Owner Type",
-      ];
+    for (let dR of e) {
+      let vVals = getvVals(dR);
       vVals.forEach((colName, ndx) => {
         window["_Div" + ndx] = document.createElement("div");
-        window["_Div" + ndx].className = "zzdetailDiv row";
+        window["_Div" + ndx].className = "zzz row";
         fMakeEl(
           `${colName}:`,
           window["_Div" + ndx],
