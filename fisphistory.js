@@ -44,13 +44,15 @@
     _H.class = "col-xl-1";
     _H.appendChild(_A);
     vProp.appendChild(_H);
-    let vVals = ["Bin", "Borough", "Block", "Lot"];
+    let vVals = ["Bin", "Borough", "Block", "Lot", "Active Job #"];
     vVals.forEach((colName, ndx) => {
+    if( e[0][colName]     )      {
       window["_Div" + ndx] = document.createElement("div");
       window["_Div" + ndx].className = "detailDiv row";
       fMakeEl(`${colName}:`, window["_Div" + ndx], "col-4");
       fMakeEl(`${e[0][colName]}`, window["_Div" + ndx], "col");
       vProp.appendChild(window["_Div" + ndx]);
+    }
     });
     let _hr = document.createElement("hr");
     _hr.className = "col-lg-1 d-lg-inline";
