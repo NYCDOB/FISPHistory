@@ -23,7 +23,7 @@ body {
   height: 75% !important;
   background-color: rgb(247, 247, 248);
   margin-top: 10px;
-  border: 1px solid gainsboro;
+  border: 2px solid rgb(98, 97, 97);
 }
 .first {
   border-bottom: 1px solid rgb(201, 202, 203);
