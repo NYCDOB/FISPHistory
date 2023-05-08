@@ -11,7 +11,7 @@
   let vProp = new DocumentFragment();
   let vPropCycles = new DocumentFragment();
   const data = await d3.csv(
-    "https://raw.githubusercontent.com/NYCDOB/data_store/master/facadeLL11_050823.csv",
+    "https://raw.githubusercontent.com/NYCDOB/data_store/master/facadeLL11_v3.csv",
     (d) => {
       d.Address = `${d["House Number"]} ${d["Street Name"]}`;
       return d;
