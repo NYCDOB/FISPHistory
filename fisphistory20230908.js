@@ -126,5 +126,5 @@
       x.click();
     }
   })();
-  resolve('true');
+
 })();
