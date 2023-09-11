@@ -116,15 +116,13 @@
     buildCard(theRecord);
   });
   (function () {
-    let t = localStorage.getItem("cathyBIN");
-    if (t) {
-      let d = document.querySelector("#searchTerm");
-      d.value = t;
+    let t=parseInt(window.location.href.split('?')[1]);history.pushState(null,"",window.location.href.split('?')[0]);
+    if (t>0) {
+      let d=document.querySelector("#searchTerm");
+      d.value=t;
       d.setAttribute("value", t);
-      let x = document.querySelector("#doSearch");
+      let x=document.querySelector("#doSearch");
       x.click();
-      localStorage.clear();
-      x = localStorage.getItem("cathyBIN");
     }
   })();
 })();
