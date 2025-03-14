@@ -11,7 +11,7 @@
   let vProp = new DocumentFragment();
   let vPropCycles = new DocumentFragment();
   const data = await d3.csv(
-    "https://raw.githubusercontent.com/NYCDOB/data_store/master/facadeLL11_v3.csv",
+    "https://raw.githubusercontent.com/NYCDOB/LocalLaw11/refs/heads/gh-pages/data/facadeLL11_v4.csv",
     (d) => {
       d.Address = `${d["House Number"]} ${d["Street Name"]}`;
       return d;
@@ -111,7 +111,7 @@
       return;
     }
     theRecord.sort((x, z) => {
-      return x.Cycle < z.Cycle ? 1 : -1;
+       return parseInt(x.Cycle.match(/\d+/)) < parseInt(z.Cycle.match(/\d+/)) ? 1 : -1;
     });
     buildCard(theRecord);
   });
